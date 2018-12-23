@@ -2,7 +2,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.3.0/workbox
 self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.keys().then(function (names) {
-      var validSets = ["is-sw-796574","is-html-796574"];
+      var validSets = ["is-sw-176151","is-html-176151"];
       return Promise.all(
         names
           .filter(function (name) { return !~validSets.indexOf(name); })
@@ -16,7 +16,7 @@ self.addEventListener('install', function (event) {
 });
 
 workbox.routing.registerRoute(new RegExp('sw\\.js'), workbox.strategies.networkOnly({
-  cacheName: 'is-sw-796574',
+  cacheName: 'is-sw-176151',
 }));
 
 workbox.routing.registerRoute(new RegExp('/.*(:?/[^\\.]*/?)$'), function(context) {
